@@ -1,20 +1,23 @@
 package com.ohc.controller;
 
-import com.ohc.pojo.Book;
+import com.ohc.entity.Book;
+import com.ohc.result.Result;
+import com.ohc.result.ResultFactory;
 import com.ohc.service.BookService;
 import com.ohc.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/23 13:54
+ * Library controller.
+ *
+ * @author Evan
+ * @date 2019/4
  */
 @RestController
 public class LibraryController {
@@ -22,43 +25,43 @@ public class LibraryController {
     BookService bookService;
 
     @GetMapping("/api/books")
-    public List<Book> list() throws Exception {
-        return bookService.list();
+    public Result listBooks() {
+        return ResultFactory.buildSuccessResult(bookService.list());
     }
 
-    @PostMapping("/api/books")
-    public Book addOrUpdate(@RequestBody Book book) throws Exception {
+    @PostMapping("/api/admin/content/books")
+    public Result addOrUpdateBooks(@RequestBody @Valid Book book) {
         bookService.addOrUpdate(book);
-        return book;
+        return ResultFactory.buildSuccessResult("修改成功");
     }
 
-    @PostMapping("/api/delete")
-    public void delete(@RequestBody Book book) throws Exception {
+    @PostMapping("/api/admin/content/books/delete")
+    public Result deleteBook(@RequestBody @Valid Book book) {
         bookService.deleteById(book.getId());
-    }
-
-    @GetMapping("/api/categories/{cid}/books")
-    public List<Book> listByCategory(@PathVariable("cid") int cid) throws Exception {
-        if (0 != cid) {
-            return bookService.listByCategory(cid);
-        } else {
-            return list();
-        }
+        return ResultFactory.buildSuccessResult("删除成功");
     }
 
     @GetMapping("/api/search")
-    public List<Book> searchResult(@RequestParam("keywords") String keywords) {
-        // 关键词为空时查询出所有书籍
+    public Result searchResult(@RequestParam("keywords") String keywords) {
         if ("".equals(keywords)) {
-            return bookService.list();
+            return ResultFactory.buildSuccessResult(bookService.list());
         } else {
-            return bookService.Search(keywords);
+            return ResultFactory.buildSuccessResult(bookService.Search(keywords));
         }
     }
 
-    @PostMapping("api/covers")
-    public String coversUpload(MultipartFile file) throws Exception {
-        String folder = "E:/workspace/img";
+    @GetMapping("/api/categories/{cid}/books")
+    public Result listByCategory(@PathVariable("cid") int cid) {
+        if (0 != cid) {
+            return ResultFactory.buildSuccessResult(bookService.listByCategory(cid));
+        } else {
+            return ResultFactory.buildSuccessResult(bookService.list());
+        }
+    }
+
+    @PostMapping("/api/admin/content/books/covers")
+    public String coversUpload(MultipartFile file) {
+        String folder = "D:/workspace/img";
         File imageFolder = new File(folder);
         File f = new File(imageFolder, StringUtils.getRandomString(6) + file.getOriginalFilename()
                 .substring(file.getOriginalFilename().length() - 4));
@@ -74,6 +77,4 @@ public class LibraryController {
         }
     }
 
-
 }
-

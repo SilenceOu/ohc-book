@@ -3,9 +3,9 @@ package com.ohc.util;
 import java.util.Random;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/24 15:04
+ * Utils for handle strings.
+ * @author Evan
+ * @date 2020/3/2 21:04
  */
 public class StringUtils {
     public static String getRandomString(int length) {

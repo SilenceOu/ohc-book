@@ -1,17 +1,16 @@
 package com.ohc.service;
 
 import com.ohc.dao.CategoryDAO;
-import com.ohc.pojo.Category;
+import com.ohc.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/23 13:52
+ * @author Evan
+ * @date 2019/4
  */
 @Service
 public class CategoryService {

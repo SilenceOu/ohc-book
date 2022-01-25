@@ -1,45 +1,29 @@
 package com.ohc.config;
 
-import com.ohc.interceptor.LoginInterceptor;
 import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/22 23:07
+ * @author Evan
+ * @date 2019/4
  */
 @SpringBootConfiguration
 public class MyWebConfigurer implements WebMvcConfigurer {
 
-    @Bean
-    public LoginInterceptor getLoginIntercepter() {
-        return new LoginInterceptor();
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry){
-        registry.addInterceptor(getLoginIntercepter()).addPathPatterns("/**").excludePathPatterns("/index.html");
-    }
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        //所有请求都允许跨域
+        //所有请求都允许跨域，使用这种配置方法就不能在 interceptor 中再配置 header 了
         registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("*")
-                .allowedHeaders("*");
+                .allowCredentials(true)
+                .allowedOrigins("http://localhost:8080")
+                .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE")
+                .allowedHeaders("*")
+                .maxAge(3600);
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "e:/workspace/img/");
+        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "d:/workspace/img/");
     }
 
-
 }
-

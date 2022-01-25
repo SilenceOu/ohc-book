@@ -1,4 +1,4 @@
-package com.ohc.pojo;
+package com.ohc.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,37 +8,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.ToString;
 
+import java.io.Serializable;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/23 13:49
+ * Category entity.
+ *
+ * @author Evan
+ * @date 2019/4
  */
+@Data
 @Entity
 @Table(name = "category")
+@ToString
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-
-public class Category {
+public class Category{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private int id;
 
-    String name;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+    /**
+     * Category name in Chinese.
+     */
+    private String name;
 }
-

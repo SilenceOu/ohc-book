@@ -3,7 +3,7 @@ package com.ohc.dto.base;
 
 import org.springframework.lang.NonNull;
 
-import static com.gm.wj.util.BeanUtils.updateProperties;
+import static com.ohc.util.BeanUtils.updateProperties;
 
 
 /**

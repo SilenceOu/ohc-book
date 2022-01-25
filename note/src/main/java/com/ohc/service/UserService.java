@@ -1,8 +1,9 @@
 package com.ohc.service;
 
 import com.ohc.dao.UserDAO;
-
-import com.ohc.pojo.User;
+import com.ohc.dto.UserDTO;
+import com.ohc.entity.AdminRole;
+import com.ohc.entity.User;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/22 20:10
+ * @author Evan
+ * @date 2019/4
  */
 @Service
 public class UserService {

@@ -1,14 +1,13 @@
 package com.ohc.dao;
 
-import com.ohc.pojo.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/23 13:52
- */
+import com.ohc.entity.Category;
 
+/**
+ * @author Evan
+ * @date 2019/4
+ */
 public interface CategoryDAO extends JpaRepository<Category, Integer> {
 
 }

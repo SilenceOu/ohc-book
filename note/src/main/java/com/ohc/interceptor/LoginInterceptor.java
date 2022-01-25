@@ -1,6 +1,6 @@
 package com.ohc.interceptor;
 
-import com.ohc.pojo.User;
+import com.ohc.entity.User;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 

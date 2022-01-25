@@ -1,8 +1,12 @@
 package com.ohc.dto;
 
-import com.ohc.pojo.User;
+import com.ohc.dto.base.OutputConverter;
+import com.ohc.entity.AdminRole;
+import com.ohc.entity.User;
 import lombok.Data;
 import lombok.ToString;
+
+import java.util.List;
 
 /**
  * @Description:
@@ -11,7 +15,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class UserDTO implements com.gm.wj.dto.base.OutputConverter<UserDTO, User> {
+public class UserDTO implements OutputConverter<UserDTO, User> {
 
     private int id;
 

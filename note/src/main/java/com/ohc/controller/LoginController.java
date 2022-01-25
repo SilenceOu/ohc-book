@@ -1,29 +1,25 @@
 package com.ohc.controller;
 
-import com.ohc.pojo.User;
+import com.ohc.entity.User;
 import com.ohc.result.Result;
 import com.ohc.result.ResultFactory;
 import com.ohc.service.UserService;
-
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.crypto.SecureRandomNumberGenerator;
-import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
-import javax.servlet.http.HttpSession;
-
+import javax.validation.Valid;
 
 /**
- * @Description:
- * @Author: SilenceOu
- * @Date: 2022/1/22 17:19
+ * Login and register controller.
+ *
+ * @author Evan
+ * @date 2019/4
  */
 @RestController
 public class LoginController {
@@ -54,7 +50,6 @@ public class LoginController {
         }
     }
 
-
     @PostMapping("/api/register")
     public Result register(@RequestBody User user) {
         int status = userService.register(user);
@@ -80,6 +75,4 @@ public class LoginController {
     public String authentication() {
         return "身份认证成功";
     }
-
-
 }
