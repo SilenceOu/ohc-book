@@ -6,12 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Role entity.
- *
- * @author Evan
- * @date 2019/11
- */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

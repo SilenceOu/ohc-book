@@ -6,12 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-/**
- * Permission entity.
- *
- * @author Evan
- * @date 2019/11
- */
+
 @Data
 @Entity
 @Table(name = "admin_permission")

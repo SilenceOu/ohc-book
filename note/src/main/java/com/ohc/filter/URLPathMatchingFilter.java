@@ -16,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Set;
 
-/**
- * @author Evan
- * @date 2019/11
- */
 @Log4j2
 public class URLPathMatchingFilter extends PathMatchingFilter {
     @Autowired

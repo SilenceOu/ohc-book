@@ -6,12 +6,7 @@ import com.ohc.service.AdminMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Menu controller.
- *
- * @author Evan
- * @date 2019/11
- */
+
 @RestController
 public class MenuController {
     @Autowired

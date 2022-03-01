@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author Evan
- * @date 2019/10
- */
+
 @Service
 public class AdminMenuService {
     @Autowired

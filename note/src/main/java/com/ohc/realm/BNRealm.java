@@ -19,7 +19,7 @@ import java.util.Set;
  * @author Evan
  * @date 2019/10
  */
-public class WJRealm extends AuthorizingRealm {
+public class BNRealm extends AuthorizingRealm {
 
     @Autowired
     private UserService userService;

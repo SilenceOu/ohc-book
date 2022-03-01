@@ -9,12 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
-/**
- * Article entity.
- *
- * @author Evan
- * @date 2020/1/14 20:25
- */
+
 @Data
 @Entity
 @Table(name = "jotter_article")

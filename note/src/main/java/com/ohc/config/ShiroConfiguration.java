@@ -1,7 +1,7 @@
 package com.ohc.config;
 
 import com.ohc.filter.URLPathMatchingFilter;
-import com.ohc.realm.WJRealm;
+import com.ohc.realm.BNRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -18,10 +18,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * @author Evan
- * @date 2019/4
- */
 @Configuration
 public class ShiroConfiguration {
     @Bean
@@ -58,7 +54,7 @@ public class ShiroConfiguration {
     @Bean
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(getWJRealm());
+        securityManager.setRealm(getBNRealm());
         securityManager.setRememberMeManager(rememberMeManager());
         return securityManager;
     }
@@ -78,10 +74,10 @@ public class ShiroConfiguration {
     }
 
     @Bean
-    public WJRealm getWJRealm() {
-        WJRealm wjRealm = new WJRealm();
-        wjRealm.setCredentialsMatcher(hashedCredentialsMatcher());
-        return wjRealm;
+    public BNRealm getBNRealm() {
+        BNRealm BNRealm = new BNRealm();
+        BNRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+        return BNRealm;
     }
 
     @Bean

@@ -8,12 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-/**
- * Book entity.
- *
- * @author Evan
- * @date 2019/4
- */
+
 @Data
 @Entity
 @Table(name = "book")

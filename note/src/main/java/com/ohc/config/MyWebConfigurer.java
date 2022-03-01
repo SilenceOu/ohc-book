@@ -3,10 +3,6 @@ package com.ohc.config;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.web.servlet.config.annotation.*;
 
-/**
- * @author Evan
- * @date 2019/4
- */
 @SpringBootConfiguration
 public class MyWebConfigurer implements WebMvcConfigurer {
 

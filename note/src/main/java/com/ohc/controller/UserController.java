@@ -9,13 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-/**
- * User controller.
- *
- * @author Evan
- * @date 2019/11
- */
-
 @RestController
 public class UserController {
     @Autowired

@@ -6,12 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-/**
- * Relations between users and role.
- *
- * @author Evan
- * @date 2019/11
- */
+
 @Data
 @Entity
 @Table(name = "admin_user_role")

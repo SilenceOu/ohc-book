@@ -7,12 +7,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Menu entity
- *
- * @author Evan
- * @date 2019/11
- */
+
 @Data
 @Entity
 @Table(name = "admin_menu")

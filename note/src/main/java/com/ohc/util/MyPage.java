@@ -7,10 +7,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * @Author Evan
- * @Date 2020/6/10
- */
+
 public class MyPage<T> implements Iterable<T>, Serializable {
     private static final long serialVersionUID = -3720998571176536865L;
     private List<T> content = new ArrayList<>();

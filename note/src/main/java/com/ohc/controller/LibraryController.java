@@ -13,12 +13,7 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Library controller.
- *
- * @author Evan
- * @date 2019/4
- */
+
 @RestController
 public class LibraryController {
     @Autowired

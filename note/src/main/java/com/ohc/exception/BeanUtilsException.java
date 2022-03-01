@@ -1,10 +1,6 @@
 package com.ohc.exception;
 
-/**
- * BeanUtils exception.
- *
- * @author johnniang
- */
+
 public class BeanUtilsException extends RuntimeException {
 
     public BeanUtilsException(String message) {

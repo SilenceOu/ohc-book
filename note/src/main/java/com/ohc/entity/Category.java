@@ -13,12 +13,7 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
-/**
- * Category entity.
- *
- * @author Evan
- * @date 2019/4
- */
+
 @Data
 @Entity
 @Table(name = "category")
