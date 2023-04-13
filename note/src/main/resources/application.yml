@@ -1,0 +1,13 @@
+server:
+    port: 8443
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.225.129:3306/book_note?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+        username: root
+        password: 123456
+    jpa:
+        hibernate:
+            ddl-auto: none
+    redis:
+        host: 192.168.225.129
