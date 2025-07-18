@@ -11,3 +11,18 @@ spring:
             ddl-auto: none
     redis:
         host: 192.168.225.129
+    mail:
+        host: smtp.163.com
+        port: 465  # SSL加密端口（TLS用587）
+        username: silenceou@163.com  # 完整邮箱地址
+        password: TPVuZrXx4SptzVed  # 替换为授权码
+        protocol: smtps
+        default-encoding: UTF-8
+        properties:
+            mail:
+                smtp:
+                    ssl:
+                        enable: true  # 启用SSL加密
+                    auth: true
+                    connectiontimeout: 5000  # 连接超时(ms)
+                    timeout: 3000             # 读取超时(ms)
